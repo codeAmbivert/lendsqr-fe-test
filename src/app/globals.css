@@ -16,8 +16,8 @@
 html,
 body {
   max-width: 100vw;
-  overflow-x: hidden; /* Keep this to prevent horizontal page scrolling */
-  overflow-y: unset; /* Allow natural vertical flow without forced scrolling */
+  /* overflow-x: hidden;  */
+  /* overflow-y: unset; */
 }
 
 body {

@@ -11,6 +11,7 @@ interface DropdownProps {
   searchable?: boolean;
   error?: string;
   onChange?: (option: { label: string; value: string }) => void;
+  position?: "down" | "up"
 }
 
 const ReusableDropDown = ({
@@ -22,6 +23,7 @@ const ReusableDropDown = ({
   onChange,
   error,
   searchable = false,
+  position = "down",
 }: DropdownProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState<{
@@ -87,7 +89,7 @@ const ReusableDropDown = ({
         </div>
 
         {isOpen && (
-          <div className={styles.dropdownMenu}>
+          <div className={`${styles.dropdownMenu} ${position === "up" ? styles.up : styles.down}`}>
             {searchable && (
               <input
                 type="text"

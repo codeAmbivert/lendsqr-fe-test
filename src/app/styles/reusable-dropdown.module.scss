@@ -66,12 +66,23 @@
   border-radius: 8px;
   border: 1px solid #d1d5db;
   width: 100%;
-  top: 100%;
+  // top: 100%;
   left: 0;
-  margin-top: 0.25rem;
+  z-index: 10;
+  
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
   overflow: hidden;
+}
+
+.up {
+  bottom: 100%;
+  margin-bottom: 0.25rem;
+}
+
+.down {
+  top: 100%;
+  margin-top: 0.25rem;
 }
 
 .searchInput {

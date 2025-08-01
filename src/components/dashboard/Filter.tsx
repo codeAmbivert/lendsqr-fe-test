@@ -178,6 +178,7 @@ const Filter = ({ label, status, filters, setFilters }: FilterProps) => {
             label="Status"
             options={statusOptions}
             placeHolder="Select"
+            position="up"
             value={statusOptions?.find(
               (opt) => opt.label === compFilters?.status
             )}

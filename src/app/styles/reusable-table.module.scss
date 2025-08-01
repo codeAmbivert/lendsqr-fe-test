@@ -1,4 +1,8 @@
-
+.main_table_container {
+  overflow-x: auto;
+  overflow-y: visible;
+  position: relative;
+}
 
 .table_container {
   font-family: var(--work-sans);
@@ -7,9 +11,10 @@
   background-color: white;
   padding: 1.5rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: max-content;
+  overflow-y: visible;
   position: relative;
-  z-index: 1;
-  overflow: visbile;
+  // overflow-x: scroll;
 
   @media (max-width: 768px) {
     display: none;

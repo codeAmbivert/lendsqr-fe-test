@@ -5,6 +5,7 @@ import { Filters, User } from "@/helpers/types";
 import { RightAngleIcon } from "../../../public/icons";
 import { useLayout } from "../layout/LayoutContext";
 import { formatPhoneNumber } from "@/helpers/utils";
+import CustomSelect from "./CustomSelect";
 
 interface UserTableProps {
   headers: { id: string; label: string | ReactNode }[];
@@ -51,14 +52,6 @@ const UserTable: React.FC<UserTableProps> = ({
   const startIndex = (currentPage - 1) * rowsPerPage;
   const endIndex = startIndex + rowsPerPage;
   const currentData = filteredData.slice(startIndex, endIndex);
-
-  const handleRowsPerPageChange = (
-    event: React.ChangeEvent<HTMLSelectElement>
-  ) => {
-    const newRowsPerPage = parseInt(event.target.value, 10);
-    setRowsPerPage(newRowsPerPage);
-    setCurrentPage(1);
-  };
 
   const getUsers = async () => {
     try {
@@ -234,7 +227,7 @@ const UserTable: React.FC<UserTableProps> = ({
 
   // Desktop Table View
   const renderDesktopTable = () => (
-    <div className={`${styles.main_table_container}`}>
+    <div className={`${styles.main_table_container} hide-scrollbar`}>
       <div className={`${styles.table_container}`}>
         <table className={styles.data_table}>
           <thead>
@@ -297,18 +290,22 @@ const UserTable: React.FC<UserTableProps> = ({
       {isMobile ? renderMobileCards() : renderDesktopTable()}
 
       <div className={styles.table_footer}>
-        <div className={styles.rows_per_page}>
-          <span className={styles.showing_text}>Showing</span>
-          <select value={rowsPerPage} onChange={handleRowsPerPageChange}>
-            <option value="10">10</option>
-            <option value="25">25</option>
-            <option value="50">50</option>
-            <option value="100">100</option>
-          </select>
-          <span className={styles.out_of_text}>
-            out of {filteredData.length}
-          </span>
-        </div>
+        <CustomSelect
+          value={rowsPerPage}
+          onChange={(value) => {
+            const newRowsPerPage = parseInt(value.toString(), 10);
+            setRowsPerPage(newRowsPerPage);
+            setCurrentPage(1);
+          }}
+          options={[
+            { value: 10, label: "10" },
+            { value: 25, label: "25" },
+            { value: 50, label: "50" },
+            { value: 100, label: "100" },
+          ]}
+          showCount={true}
+          totalCount={filteredData.length}
+        />
         <div className={styles.pagination}>
           {renderPaginationButtons(currentPage, setCurrentPage, totalPages)}
         </div>

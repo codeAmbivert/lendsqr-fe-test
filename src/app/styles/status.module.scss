@@ -12,21 +12,21 @@
 
   &.inactive {
     color: #545f7d;
-    background-color: mix(white, #545f7d, 90%);
+    background-color: rgba(84, 95, 125, 0.1);
   }
 
   &.active {
     color: #39cd62;
-    background-color: mix(white, #39cd62, 90%);
+    background-color: rgba(57, 205, 98, 0.1);
   }
 
   &.blacklisted {
     color: #e4033b;
-    background-color: mix(white, #e4033b, 90%);
+    background-color: rgba(228, 3, 59, 0.1);
   }
 
   &.pending {
     color: #e9b200;
-    background-color: mix(white, #e9b200, 90%);
+    background-color: rgba(233, 178, 0, 0.1);
   }
 }

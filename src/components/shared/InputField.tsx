@@ -6,7 +6,6 @@ interface InputFieldProps extends React.HTMLProps<HTMLInputElement> {
   error?: string;
   type?: string;
   icon?: React.ReactNode | string;
-  borderColor?: string;
 }
 
 const InputField = ({ name, type, error, icon, ...props }: InputFieldProps) => {

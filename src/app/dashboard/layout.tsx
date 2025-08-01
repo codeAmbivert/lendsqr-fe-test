@@ -1,8 +1,9 @@
 "use client";
+import {useState} from "react"
 import Header from "@/components/layout/Header";
 import Sidebar from "@/components/layout/Sidebar";
 import styles from "@/app/styles/layout/layout.module.scss";
-import { LayoutProvider, useLayout } from "@/components/layout/LayoutContext";
+import { LayoutProvider } from "@/components/layout/LayoutContext";
 import MobileSidebar from "@/components/layout/MobileSidebar";
 
 const LayoutContent = ({
@@ -10,7 +11,7 @@ const LayoutContent = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const { openSidebar, setOpenSidebar } = useLayout();
+  const [openSidebar, setOpenSidebar] = useState(false)
 
   return (
     <>

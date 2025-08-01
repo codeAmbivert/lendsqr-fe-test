@@ -15,7 +15,7 @@ $primary: #39cdcc;
 }
 .active {
   position: relative;
-  background-color: mix(white, $primary, 95%);
+  background-color: rgba(57, 205, 204, 0.05);
   border: none;
   cursor: pointer;
   display: flex;

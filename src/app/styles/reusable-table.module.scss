@@ -166,7 +166,7 @@
   color: #334155;
   text-align: right;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   max-width: 55%;
   word-break: break-word;
   line-height: 1.4;
@@ -316,7 +316,7 @@
       border: none;
       border-radius: 5px;
       background-color: transparent;
-      color: lighten(#545f7d, 30%);
+      color: #8a96ab;
       cursor: pointer;
       font-family: var(--work-sans);
       font-size: 16px;
@@ -328,7 +328,7 @@
       transition: all 0.3s ease;
 
       &.nav_button {
-        background-color: lighten(#64748b, 45%);
+        background-color: #b8c2d3;
       }
 
       &:hover:not(:disabled) {

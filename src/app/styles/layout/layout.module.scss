@@ -1,0 +1,40 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+
+  main {
+    display: flex;
+    flex-direction: row;
+    height: calc(100vh - 100px);
+    width: 100%;
+
+    .sidebar {
+      width: 283px;
+      overflow-y: auto;
+      height: 100%;
+      z-index: 100;
+      box-shadow: 8px 0 6px rgba(0, 0, 0, 0.01);
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      @media screen and (max-width: 768px) {
+        width: 0px;
+      }
+    }
+
+    .content {
+      width: calc(100vw - 283px);
+      background: #fbfbfb;
+      height: 100%;
+      overflow-y: unset;                               
+      overflow-x: auto; 
+      isolation: auto;
+      @media screen and (max-width: 768px) {
+        width: calc(100vw - 0px);
+      }
+    }
+  }
+}

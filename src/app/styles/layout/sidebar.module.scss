@@ -1,0 +1,116 @@
+.container {
+  padding: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  .buttons {
+    margin-top: -2rem;
+    padding-bottom: 2rem;
+  }
+
+  .button_container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    .title {
+      margin-top: 2rem;
+      font-size: 12px;
+      font-weight: 500;
+      font-family: var(--work-sans);
+      padding-left: 2rem;
+      color: var(--textColor2);
+    }
+  }
+
+  .footer {
+    padding-top: 0.8rem;
+    border-top: 1px solid lighten(#213f7d, 60%);
+
+    p {
+      font-size: 12px;
+      padding-left: 2rem;
+      margin-top: 2rem;
+      margin-bottom: -2rem;
+    }
+  }
+}
+
+.transparent_modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1000;
+}
+
+.mobile_container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  max-width: 300px;
+  width: 100%;
+  background-color: white;
+  z-index: 1050;
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  .title {
+    margin-top: 2rem;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: var(--work-sans);
+    padding-left: 2rem;
+    color: var(--textColor2);
+  }
+
+  &.open {
+    transform: translateX(0);
+  }
+
+  &.closed {
+    transform: translateX(-300px);
+  }
+
+  .logo_container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+
+    .close_menu_icon {
+      height: 1.5rem;
+      width: 1.5rem;
+      color: red;
+      cursor: pointer;
+    }
+  }
+
+  .content {
+    padding: 2rem 0rem;
+    overflow-y: scroll;
+
+    .buttons {
+      padding-bottom: 3rem;
+    }
+
+    .footer {
+      padding-top: 0.8rem;
+      border-top: 1px solid lighten(#213f7d, 60%);
+
+      p {
+        font-size: 12px;
+        padding-left: 2rem;
+        margin-top: 2rem;
+        margin-bottom: -1rem;
+      }
+    }
+  }
+
+  .dashboard_button {
+    padding-top: 2rem;
+  }
+}

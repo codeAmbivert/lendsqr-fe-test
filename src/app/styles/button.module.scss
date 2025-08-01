@@ -1,0 +1,57 @@
+$gray-500: #6b7280;
+$gray-600: #4b5563;
+$gray-700: #374151;
+$gray-800: #1f2937;
+$gray-border: #475569;
+$white: #ffffff;
+$primary: #39cdcc;
+$primary-hover: darken($primary, 7%);
+$focus-ring: rgba($primary, 0.5);
+$focus-ring-offset: 2px;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 48px;
+  border-radius: 8px;
+  font-family: var(--avenir-font);
+  font-weight: 500;
+  font-size: 14px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 $focus-ring-offset $focus-ring;
+  }
+
+  &.reset {
+    border: 1px solid $gray-border;
+    background-color: $white;
+    color: $gray-border;
+
+    &:hover {
+      background-color: #f1f5f9;
+    }
+  }
+
+  &.filter {
+    background-color: $primary;
+    color: $white;
+    border: none;
+
+    &:hover {
+      background-color: $primary-hover;
+    }
+  }
+
+  &.sm {
+    padding: 0.25rem 0.75rem;
+  }
+
+  &.md {
+    padding: 0.5rem 1rem;
+  }
+}

@@ -1,0 +1,32 @@
+.status {
+  padding: 0.25rem 1rem;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  text-transform: capitalize;
+  border-radius: 9999px;
+  color: white;
+  width: fit-content;
+
+  &.inactive {
+    color: #545f7d;
+    background-color: mix(white, #545f7d, 90%);
+  }
+
+  &.active {
+    color: #39cd62;
+    background-color: mix(white, #39cd62, 90%);
+  }
+
+  &.blacklisted {
+    color: #e4033b;
+    background-color: mix(white, #e4033b, 90%);
+  }
+
+  &.pending {
+    color: #e9b200;
+    background-color: mix(white, #e9b200, 90%);
+  }
+}

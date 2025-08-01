@@ -1,0 +1,38 @@
+$primary: #39cdcc;
+.btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 40px;
+  width: 100%;
+  padding: 0 2rem;
+  font-size: 16px;
+  color: #7a8cb1;
+  font-family: var(--work-sans);
+}
+.active {
+  position: relative;
+  background-color: mix(white, $primary, 95%);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 40px;
+  width: 100%;
+  padding: 0 2rem;
+  font-size: 16px;
+  color: var(--textColor2);
+  font-family: var(--work-sans);
+  .active_div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background-color: $primary;
+  }
+}

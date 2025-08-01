@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 0;
+  font-family: var(--work-sans);
+  height: 160px;
+  width: 100%;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid mix(transparent, #213f7d0f, 6%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
+
+  .icon_container {
+    padding-left: 2rem;
+  }
+
+  .title {
+    font-size: 14px;
+    font-weight: 500;
+    padding-left: 2rem;
+    color: #545f7d;
+  }
+  .count {
+    font-weight: 600;
+    font-size: 24px;
+    padding-left: 2rem;
+    color: var(--textColor2);
+  }
+}

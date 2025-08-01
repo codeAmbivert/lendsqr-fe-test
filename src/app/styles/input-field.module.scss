@@ -1,0 +1,42 @@
+.input-container {
+  .input-field {
+    padding: 0.9rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 0.375rem;
+    background: white;
+    display: flex;
+    color: var(--textColor);
+    &:hover {
+      border-color: var(--primary);
+    }
+    label {
+      font-size: 14px;
+      width: 100%;
+    }
+    input {
+      border: none;
+      width: 100%;
+      color: #545F7D;
+      font-size: 14px;
+      font-family: var(--avenir-font);
+      font-weight: 400;
+      &::placeholder {
+        color: #989fb1;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  p {
+    color: #ef4444;
+    font-size: 12px;
+    margin-top: -15px;
+  }
+  .focused {
+    border-color: var(--primary);
+  }
+  .error {
+    border-color: #ef4444;
+  }
+}

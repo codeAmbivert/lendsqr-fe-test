@@ -1,0 +1,94 @@
+.container {
+  font-family: var(--avenir-font);
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  div, form {
+    width: 100%;
+    div {
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  .img-container {
+    position: relative;
+    div {
+      display: flex;
+      flex-direction: column;
+      padding: 5rem 1rem 1rem 1rem;
+      .signin-img {
+        width: 100%;
+        height: auto;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 30px;
+      height: 100%;
+      pointer-events: none;
+      background: linear-gradient(to left, rgba(0, 0, 0, 0.01), transparent);
+    }
+  }
+  .form-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    h1 {
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--textColor2);
+      letter-spacing: -2px;
+    }
+    .info-text {
+      font-size: 18px;
+      margin-bottom: 2rem;
+    }
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+      max-width: 450px;
+    }
+  }
+  .password-type {
+    font-size: 12px;
+    font-weight: 600;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: var(--avenir-font);
+    color: var(--primary);
+  }
+  .fgt-pwd {
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-family: var(--avenir-font);
+    color: var(--primary);
+  }
+  .mobile-logo {
+    display: none;
+    margin: 0 auto 1.5rem auto;
+  }
+
+  @media (max-width: 768px) {
+    .img-container {
+      display: none;
+    }
+    .mobile-logo {
+      display: block;
+    }
+  }
+}

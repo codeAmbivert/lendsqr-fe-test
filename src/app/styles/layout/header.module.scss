@@ -1,0 +1,143 @@
+.container {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.01);
+  z-index: 500;
+  background: white;
+  font-family: var(--work-sans);
+
+  .logo_container {
+    display: flex !important;
+    align-items: center !important;
+    gap: 1rem !important;
+    flex: 0 0 auto;
+
+    .open_menu_icon {
+      height: 1.7rem;
+      width: 1.7rem;
+      display: none;
+      cursor: pointer;
+
+      @media screen and (max-width: 768px) {
+        display: block;
+      }
+    }
+  }
+
+  .search_container {
+    display: flex;
+    flex: 1;
+    max-width: 400px;
+    margin: 0 40px;
+    height: 40px;
+
+    input {
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+      width: 100%;
+      border: none;
+      height: 100%;
+      font-size: 14px;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      font-family: var(--work-sans);
+      font-weight: 400;
+      &.search_input {
+        border: 1px solid lighten(#213f7d, 60%);
+        border-right: none;
+        width: 100%;
+      }
+      &:focus{
+        outline: none;
+      }
+      &::placeholder {
+        color: #545f7d;
+      }
+    }
+
+    .search_icon {
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+      width: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #39cdcc;
+    }
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  .user_section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 0 0 auto;
+
+    .docs_link {
+      color: #213f7d;
+      text-decoration: underline;
+      font-size: 16px;
+      cursor: pointer;
+
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
+    }
+
+    .notification_icon {
+      font-size: 20px;
+      cursor: pointer;
+      color: #39cdcc;
+
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
+    }
+
+    .user_profile {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+
+      .user_avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .user_name {
+        color: #213f7d;
+        font-weight: 500;
+        font-size: 16px;
+
+        @media screen and (max-width: 768px) {
+          display: none;
+        }
+      }
+
+      .dropdown_arrow {
+        color: #213f7d;
+        font-size: 12px;
+
+        @media screen and (max-width: 768px) {
+          display: none;
+        }
+      }
+    }
+  }
+}

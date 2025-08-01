@@ -1,0 +1,13 @@
+.container {
+  overflow: visible;
+  position: relative;
+
+  .table_container {
+    background-color: white;
+    border-radius: 5px;
+    padding: 1rem;
+    border: 1px solid mix(transparent, #213f7d0f, 6%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
+    overflow: visible;
+  }
+}

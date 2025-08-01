@@ -1,0 +1,155 @@
+.dropdownContainer {
+  width: 100%;
+  position: relative;
+}
+
+.label {
+  font-size: 14px;
+  color: #374151;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+  text-transform: none;
+
+  .required {
+    color: #ef4444;
+    margin-left: 0.125rem;
+  }
+}
+
+.dropdownWrapper {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+}
+
+.dropdownTrigger {
+  padding: 0.5rem 1rem;
+  height: 40px;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  width: 100%;
+  color: #6b7280;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  font-family: var(--work-sans);
+  transition: all 0.2s ease-in-out;
+  text-transform: none;
+  font-weight: 400;
+
+  &:hover {
+    border-color: #3b82f6;
+  }
+
+  &.error {
+    border-color: #ef4444;
+  }
+}
+
+.arrowIcon {
+  font-size: 0.75rem;
+  color: #374151;
+  transition: all 0.3s ease;
+
+  &.rotated {
+    transform: rotate(180deg);
+  }
+}
+
+.dropdownMenu {
+  position: absolute;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  width: 100%;
+  top: 100%;
+  left: 0;
+  margin-top: 0.25rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 0.875rem;
+  outline: none;
+  color: #6b7280;
+  border: none;
+  border-bottom: 1px solid #e5e7eb;
+
+  &::placeholder {
+    color: #9ca3af;
+  }
+
+  &:focus {
+    outline: none;
+    border-bottom-color: #3b82f6;
+  }
+}
+
+.optionsList {
+  max-height: 10rem;
+  overflow-y: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.option {
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  color: #374151;
+  font-size: 14px;
+  text-transform: none;
+  font-weight: 400;
+
+  &:hover {
+    background-color: #f9fafb;
+  }
+
+  &.hasBorder {
+    border-top: 1px solid #e5e7eb;
+  }
+}
+
+.noOptions {
+  padding: 0.5rem 1.5rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.errorMessage {
+  color: #ef4444;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  font-weight: 400;
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .dropdownTrigger {
+    height: 36px;
+    font-size: 0.875rem;
+  }
+
+  .label {
+    font-size: 0.8125rem;
+  }
+
+  .option {
+    font-size: 0.875rem;
+    padding: 0.4rem 1rem;
+  }
+
+  .searchInput {
+    font-size: 0.8125rem;
+    padding: 0.4rem 0.75rem;
+  }
+}

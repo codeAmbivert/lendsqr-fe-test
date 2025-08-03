@@ -53,15 +53,21 @@ const UserTable: React.FC<UserTableProps> = ({
   const endIndex = startIndex + rowsPerPage;
   const currentData = filteredData.slice(startIndex, endIndex);
 
-  const getUsers = async () => {
+  const getUsers = React.useCallback(async () => {
     try {
       setLoading(true);
       const users = localStorage.getItem("users");
 
       if (users) {
-        setData(users ? JSON.parse(users) : []);
-        setLoading(false);
-        return;
+        try {
+          setData(JSON.parse(users));
+          setLoading(false);
+          return;
+        } catch (parseError) {
+          console.error("Error parsing users from localStorage:", parseError);
+          // If localStorage data is corrupted, clear it and fetch from API
+          localStorage.removeItem("users");
+        }
       }
 
       const response = await fetch(url);
@@ -78,18 +84,12 @@ const UserTable: React.FC<UserTableProps> = ({
       console.error("Error fetching users:", error);
       setLoading(false);
     }
-  };
+  }, [url]);
 
   useEffect(() => {
     getUsers();
-  }, []);
-
-  useEffect(() => {
-    if (refreshTable) {
-      getUsers();
-      setRefreshTable?.(false);
-    }
-  }, [refreshTable]);
+    if (refreshTable) setRefreshTable?.(false);
+  }, [getUsers, filters, refreshTable, setRefreshTable]);
 
   // Filter data based on filters prop and global search
   useEffect(() => {
